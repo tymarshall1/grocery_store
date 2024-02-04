@@ -1,0 +1,16 @@
+extends layout
+block content
+    div(class="flex-col-container")
+        h1(class="mb-2")=title
+        form(method="post")
+            label(for="itemName")  Name
+            input(type='text', id="itemName" , name="itemName")
+            label(for="itemDesc")  Description
+            textarea(name="itemDesc", cols="30", rows="10" id="itemDesc")
+            label(for="category") Category
+            input(type="select", id="category", name="itemCategory")   
+            label(for="itemPrice") Price
+            input(type="number", id="itemPrice", name="itemPrice")
+            label(for="itemNumInStock") Price
+            input(type="number", id="itemNumInStock", name="itemNumInStock")  
+            button(type="submit") Submit   

@@ -34,3 +34,41 @@ header a {
 header a:hover {
   background-color: white;
 }
+
+form {
+  border: 2px solid black;
+  border-radius: 1rem;
+  padding: 2rem;
+  width: 50%;
+}
+
+form label {
+  font-size: 1rem;
+}
+
+form input,
+form textarea {
+  padding: 0.5rem;
+  display: block;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+button {
+  display: block;
+  padding: 1rem;
+  width: 25%;
+  margin: 0 auto;
+}
+
+.flex-col-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.mb-2 {
+  margin-bottom: 2rem;
+}
