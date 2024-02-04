@@ -35,6 +35,10 @@ header a:hover {
   background-color: white;
 }
 
+main {
+  padding: 2rem;
+}
+
 form {
   border: 2px solid black;
   border-radius: 1rem;
@@ -71,4 +75,8 @@ button {
 
 .mb-2 {
   margin-bottom: 2rem;
+}
+
+.error {
+  color: red;
 }

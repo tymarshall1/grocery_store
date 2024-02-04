@@ -3,8 +3,10 @@ block content
     div(class="flex-col-container")
         h1(class="mb-2")=title
         form(method="post")
-            label(for="itemName")  Name
-            input(type='text', id="itemName" , name="itemName")
-            label(for="itemDesc")  Description
-            textarea(name="itemDesc", cols="30", rows="10" id="itemDesc")
+            label(for="categoryName")  Name
+            span(class="error")=nameError
+            input(type='text', value=categoryName, id="categoryName" , name="categoryName", required)
+            label(for="categoryDesc")  Description
+            span(class="error")=descError
+            textarea(name="categoryDesc", cols="30", rows="10" id="categoryDesc", required)=categoryDesc
             button(type="submit") Submit   
