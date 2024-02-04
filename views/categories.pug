@@ -1,4 +1,11 @@
 extends layout
 block content
-    h1=title
-    a(href="/categories/create") Create Category 
+    div(class="flex-col-container mb-2")
+        h1(class="mb-1 font-size-lg")=title
+        a(class="btn-link",href="/categories/create") Create Category 
+    div(class="card-container")
+        each category in allCategories
+            div(class="card mb-2")
+                h1(class='capitalize mb-1')=category.name
+                p=category.description
+            

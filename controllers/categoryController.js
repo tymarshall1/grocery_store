@@ -2,9 +2,10 @@ const Category = require("../models/category");
 const { body, validationResult } = require("express-validator");
 const asyncHandler = require("express-async-handler");
 
-exports.all_categories_get = (req, res) => {
-  res.render("categories", { title: "Categories" });
-};
+exports.all_categories_get = asyncHandler(async (req, res) => {
+  const allCategories = await Category.find({});
+  res.render("categories", { title: "Categories", allCategories });
+});
 
 exports.single_category = asyncHandler(async (req, res) => {
   const category = await Category.findById(req.params.id);
@@ -84,7 +85,7 @@ exports.create_category_post = [
       return;
     }
 
-    category.save();
+    await category.save();
     res.redirect(category.url);
   }),
 ];
