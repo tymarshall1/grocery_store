@@ -28,6 +28,7 @@ header a {
   display: block;
   text-align: center;
   font-weight: 900;
+  transition: background-color 0.2s ease-in-out;
 }
 
 header a {
@@ -43,7 +44,7 @@ main {
 }
 
 form {
-  border: 2px solid black;
+  border: 2px solid aquamarine;
   border-radius: 1rem;
   padding: 2rem;
   width: 50%;
@@ -53,6 +54,7 @@ form label {
   font-size: 1rem;
 }
 
+form select,
 form input,
 form textarea {
   padding: 0.5rem;
@@ -79,7 +81,7 @@ button {
 
 .card-container {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1rem;
 }
 
@@ -118,6 +120,10 @@ button {
 
 .capitalize {
   text-transform: capitalize;
+}
+
+.bg-white {
+  background-color: white;
 }
 
 .error {

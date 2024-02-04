@@ -2,15 +2,31 @@ extends layout
 block content
     div(class="flex-col-container")
         h1(class="mb-2")=title
-        form(method="post")
+        form(method="POST")
             label(for="itemName")  Name
-            input(type='text', id="itemName" , name="itemName")
+            span(class='error')=nameError
+            input(type='text', id="itemName" , name="itemName", value=name)
+
             label(for="itemDesc")  Description
-            textarea(name="itemDesc", cols="30", rows="10" id="itemDesc")
-            label(for="category") Category
-            input(type="select", id="category", name="itemCategory")   
+            span(class='error')=descriptionError
+            textarea(name="itemDesc", cols="30", rows="10" id="itemDesc")=description
+
+            label(for="itemCategory") Category  
+            span(class='error')=categoryError
+            select(name="itemCategory", id="itemCategory")
+                each cat in allCategories
+                    if (category)
+                        - const isSelected = cat._id.toString() === category.toString()
+                        option(value=cat._id, selected=isSelected)=cat.name
+                    else 
+                        option(value=cat._id, selected=false)=cat.name  
+
             label(for="itemPrice") Price
-            input(type="number", id="itemPrice", name="itemPrice")
-            label(for="itemNumInStock") Price
-            input(type="number", id="itemNumInStock", name="itemNumInStock")  
+            span(class='error')=priceError
+            input(type="number", id="itemPrice", name="itemPrice", value=price, step=".01")
+
+            label(for="itemNumInStock") Number in stock
+            span(class='error')=numberInStockError
+            input(type="number", id="itemNumInStock", name="itemNumInStock", value=number_in_stock)  
+
             button(type="submit") Submit   

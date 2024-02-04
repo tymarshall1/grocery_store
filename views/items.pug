@@ -1,4 +1,14 @@
 extends layout
 block content
-    h1=title
-    a(href="/items/create") Create Item
+    div(class="flex-col-container mb-2")
+        h1(class="mb-1 font-size-lg")=title
+        a(class="btn-link",href="/items/create") Create Item 
+    div(class="card-container")
+        each item in allItems
+            div(class="card mb-2")
+                h1(class='capitalize mb-1')=item.name
+                p=item.description
+                p="Category: " + item.category.name
+                p="$" + item.price
+                p="In stock: " + item.number_in_stock
+            

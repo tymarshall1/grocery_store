@@ -7,5 +7,5 @@ block content
         each category in allCategories
             div(class="card mb-2")
                 h1(class='capitalize mb-1')=category.name
-                p=category.description
-            
+                p(class="mb-1 capitalize")=category.description
+                a(href=category.url, class="btn-link bg-white")="See " + category.name
