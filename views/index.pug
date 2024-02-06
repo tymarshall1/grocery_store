@@ -1,5 +1,15 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  div(class="flex-col-container mb-2")
+    h1= title
+    p Welcome to #{title}
+  
+  div(class="grid-2") 
+    div(class='card')
+      h2(class="mb-2 font-size-md")="View Our Many Categories"
+      a(href="/categories/", class="btn-link bg-white") Categories
+
+    div(class='card')
+      h2(class="mb-2 font-size-md")="View Our Wide Selection of Items"
+      a(href="/items/", class="btn-link bg-white") All items

@@ -44,14 +44,16 @@ main {
 }
 
 form {
-  border: 2px solid aquamarine;
+  border: 1px solid black;
   border-radius: 1rem;
   padding: 2rem;
   width: 50%;
+  background: linear-gradient(to bottom right, #7fffd4, #aeffe5);
 }
 
 form label {
-  font-size: 1rem;
+  font-size: 20px;
+  font-weight: 700;
 }
 
 form select,
@@ -61,6 +63,7 @@ form textarea {
   display: block;
   margin-bottom: 1rem;
   width: 100%;
+  font-size: 18px;
 }
 
 button {
@@ -68,6 +71,16 @@ button {
   padding: 1rem;
   width: 25%;
   margin: 0 auto;
+  background-color: white;
+  outline: none;
+  border: 1px solid black;
+  transition: background-color 0.2s ease-in-out;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+button:hover {
+  background-color: aquamarine;
 }
 
 .btn-link {
@@ -79,10 +92,15 @@ button {
   background-color: aquamarine;
 }
 
-.card-container {
+.card-container,
+.grid-2 {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1rem;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .card {
@@ -110,6 +128,10 @@ button {
   font-size: 48px;
 }
 
+.font-size-md {
+  font-size: 28px;
+}
+
 .mb-1 {
   margin-bottom: 1rem;
 }
@@ -130,7 +152,7 @@ button {
   color: red;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .card-container {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
