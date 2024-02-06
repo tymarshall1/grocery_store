@@ -14,8 +14,8 @@ router.get("/delete/:id", categoriesController.single_category_delete_get);
 
 router.post("/delete/:id", categoriesController.single_category_delete_post);
 
-// router.get("/update/:id", categoriesController.single_category_update_get);
+router.get("/update/:id", categoriesController.single_category_update_get);
 
-// router.post("/update/:id", categoriesController.single_category_update_post);
+router.post("/update/:id", categoriesController.single_category_update_post);
 
 module.exports = router;

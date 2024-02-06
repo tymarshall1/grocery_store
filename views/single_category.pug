@@ -1,14 +1,14 @@
 extends layout 
 block content
-    h1=title
-    p(class="mb-2")=categoryDesc
+    h1(class="capitalize")=title
+    p(class="mb-2 capitalize")=categoryDesc
     div(class="card-container")
         each item in itemsInCategory
             div(class="card mb-2")
-                h1(class='capitalize mb-1')=item.name
-                p=item.description
-                p="Category: " + item.category.name
-                p="$" + item.price
-                p(class="mb-1")="In stock: " + item.number_in_stock
+                h1(class="capitalize")=item.name
+                p(class="capitalize")=item.description
+                h4(class='capitalize')="Category: " + item.category.name
+                h2(class="capitalize")= "$" + item.price
+                h3(class="capitalize mb-1")= "Current Stock: " + item.number_in_stock
                 a(href="/items/update/"+item._id, class="btn-link mb-1 bg-white")="Update " + item.name  
                 a(href="/items/delete/"+item._id, class="btn-link bg-white")="Delete " + item.name 
