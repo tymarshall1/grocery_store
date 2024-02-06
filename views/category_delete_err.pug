@@ -1,11 +1,13 @@
-extends layout
-block content
-    div(class="flex-col-container mb-2")
-        h1(class="mb-1 font-size-lg")=title
-        a(class="btn-link",href="/items/create") Create Item 
+extends layout 
+block content 
+    div(class="card mb-2")
+        h1="Sorry can't delete this category because there are items that belong to it."
+    
+    h1(class="mb-2")="Items that still belong to category"
+
     div(class="card-container")
-        each item in allItems
-            div(class="card mb-2")
+        each item in categoryItems
+            div(class='card')
                 h1(class="capitalize")=item.name
                 p(class="capitalize")=item.description
                 h2(class="capitalize")= "$" + item.price

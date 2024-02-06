@@ -66,6 +66,12 @@ form textarea {
   font-size: 18px;
 }
 
+.delete-form {
+  display: flex;
+  gap: 1rem;
+  width: auto;
+}
+
 button {
   display: block;
   padding: 1rem;
@@ -81,6 +87,13 @@ button {
 
 button:hover {
   background-color: aquamarine;
+  cursor: pointer;
+}
+
+.update-del-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .btn-link {
@@ -132,6 +145,10 @@ button:hover {
   font-size: 28px;
 }
 
+.font-size-sm {
+  font-size: 14px;
+}
+
 .mb-1 {
   margin-bottom: 1rem;
 }
@@ -140,12 +157,28 @@ button:hover {
   margin-bottom: 2rem;
 }
 
+.mr-1 {
+  margin-right: 1rem;
+}
+
 .capitalize {
   text-transform: capitalize;
 }
 
 .bg-white {
   background-color: white;
+}
+
+.display-inline-block {
+  display: inline-block;
+}
+
+.warning {
+  background-color: red;
+}
+
+.width-auto {
+  width: auto;
 }
 
 .error {

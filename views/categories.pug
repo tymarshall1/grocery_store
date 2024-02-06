@@ -8,4 +8,7 @@ block content
             div(class="card mb-2")
                 h1(class='capitalize mb-1')=category.name
                 p(class="mb-1 capitalize")=category.description
-                a(href=category.url, class="btn-link bg-white")="See " + category.name
+                div(class="update-del-btns")
+                    a(href=category.url, class="btn-link bg-white")="See " + category.name
+                    a(class="btn-link bg-white",href="update/" + category._id)="Update " + category.name
+                    a(class="btn-link bg-white",href="delete/" + category._id)="Delete " + category.name 

@@ -108,10 +108,14 @@ exports.single_item_get = asyncHandler(async (req, res) => {
 });
 
 exports.single_item_delete_get = asyncHandler(async (req, res) => {
-  res.render("delete_confirm", { title: "delete item" });
+  const item = await Item.findById(req.params.id);
+  res.render("delete_item_confirm", { title: "Delete " + item.name, item });
 });
 
-exports.single_item_delete_post = asyncHandler(async (req, res) => {});
+exports.single_item_delete_post = asyncHandler(async (req, res) => {
+  await Item.findByIdAndDelete(req.params.id);
+  res.redirect("/items/");
+});
 
 exports.single_item_update_get = asyncHandler(async (req, res) => {
   const item = await Item.findById(req.params.id);

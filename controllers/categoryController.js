@@ -94,3 +94,25 @@ exports.create_category_post = [
     res.redirect(category.url);
   }),
 ];
+
+exports.single_category_delete_get = asyncHandler(async (req, res) => {
+  const category = await Category.findById(req.params.id);
+  res.render("delete_category", { title: "Delete " + category.name, category });
+});
+
+exports.single_category_delete_post = asyncHandler(async (req, res) => {
+  const categoryItems = await Item.find({ category: req.params.id }).exec();
+  if (categoryItems.length === 0) {
+    await Category.findByIdAndDelete(req.params.id);
+    res.redirect("/categories/");
+  } else {
+    res.render("category_delete_err", {
+      title: "Error Deleting",
+      categoryItems,
+    });
+  }
+});
+
+// exports.single_category_update_get = [];
+
+// exports.single_category_update_get = [];

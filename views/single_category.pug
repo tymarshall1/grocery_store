@@ -9,6 +9,6 @@ block content
                 p=item.description
                 p="Category: " + item.category.name
                 p="$" + item.price
-                p="In stock: " + item.number_in_stock
-            
- 
+                p(class="mb-1")="In stock: " + item.number_in_stock
+                a(href="/items/update/"+item._id, class="btn-link mb-1 bg-white")="Update " + item.name  
+                a(href="/items/delete/"+item._id, class="btn-link bg-white")="Delete " + item.name 

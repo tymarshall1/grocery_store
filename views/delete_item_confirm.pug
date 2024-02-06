@@ -1,0 +1,9 @@
+extends layout 
+block content
+    div(class="flex-col-container")
+        h1(class="mb-2")=title
+        div(class='card')
+            h2(class="mb-1")="Are you sure you wish to delete " + item.name + "?"
+            form(class="delete-form", method="post")
+                a(href="/items/" , class="btn-link bg-white") Cancel 
+                button(class="warning width-auto btn-link font-size-sm") Delete
